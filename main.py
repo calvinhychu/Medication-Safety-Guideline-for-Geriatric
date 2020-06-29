@@ -5,8 +5,14 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def main():
-    return "Hello world from Flask!"
+@app.route("/home")
+def home():
+    return "<h1>Home</h1>"
+
+
+@app.route("/about")
+def about():
+    return "About!"
 
 
 if __name__ == "__main__":
