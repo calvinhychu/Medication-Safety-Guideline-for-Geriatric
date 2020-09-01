@@ -29,6 +29,11 @@
           font-size: 3.5rem;
         }
       }
+
+      .msg {
+        text-align: center;
+        color: red;
+      }
     </style>
     <!-- Custom styles for this template -->
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/starter-template.css') }}">
@@ -62,11 +67,22 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit"><a href="/login" class="button">Login</a></button>
+      {% if current_user.is_authenticated %}
+      <a class="btn btn-secondary" href="/logout" role="button">Logout</a>
+      {% else %}
+      <a class="btn btn-primary mr-2" href="/register" role="button">Sign up</a>
+      <a class="btn btn-secondary" href="/login" role="button">Login</a>
+      {% endif %}
     </form>
   </div>
 </nav>
-
+{% with messages = get_flashed_messages() %}
+      {% if messages %}
+          {% for msg in messages %}
+              <h4 class="msg">{{msg}}</h4>
+          {% endfor %}
+      {% endif %}
+{% endwith %}
 <main role="main" class="container">
 
   <div class="starter-template">
