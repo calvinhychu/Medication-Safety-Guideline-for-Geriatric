@@ -1,0 +1,5 @@
+# Default ignored files
+.idea
+__pycache__
+stjoegeriatric.db
+secret_key.py
