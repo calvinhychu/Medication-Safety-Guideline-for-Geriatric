@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Bootstrap core CSS -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
+  />
+  <style>
+    .title {
+      margin-top: 85px;
+      margin-left: 100px;
+    }
+    .note {
+      margin-top: 35px;
+      margin-left: 300px;
+    }
+    .date {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  </style>
+  {% include "navbar.html" %} {% block content %} {% if notes != [] %}
+  <h3 class="title">Note session for Drug</h3>
+  {% for note in notes %}
+  <div class="note">
+    <div class="card" style="width: 58rem">
+      <div class="card-body">
+        <h5 class="card-title">{{load_user(note.user_id).name}}</h5>
+        <h6 class="card-subtitle mb-3 text-muted">
+          {{load_user(note.user_id).profession}},
+          {{load_user(note.user_id).department}}
+        </h6>
+        <h6 class="card-subtitle mb-3 text-muted">
+          {{load_user(note.user_id).email}}
+        </h6>
+        <p class="card-text">{{note.content}}</p>
+        <p class="date">{{note.date_posted.strftime("%d/%m/%Y %H:%M")}}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %} {% else %}
+  <h3 class="title">No notes posted</h3>
+  {% endif %} {% endblock %}
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      .login-name {
+        color: white;
+        font-size: 17px;
+        margin-right: 35px;
+        margin-top: 8px;
+      }
+    </style>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">SJS</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/drugclass/">Drug Classes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/medications/">Medications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          {% if current_user.is_authenticated %}
+          <h4 class="login-name">
+            User: {{ load_user(current_user.get_id()).name }}
+          </h4>
+          <a class="btn btn-secondary" href="/logout" role="button">Logout</a>
+          {% else %}
+          <a class="btn btn-primary mr-2" href="/register" role="button"
+            >Sign up</a
+          >
+          <a class="btn btn-secondary" href="/login" role="button">Login</a>
+          {% endif %}
+        </form>
+      </div>
+    </nav>
+  </head>
+</html>

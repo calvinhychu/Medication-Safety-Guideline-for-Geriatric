@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Bootstrap core CSS -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
+  />
+  <style>
+    .title {
+      margin-top: 100px;
+      text-align: center;
+    }
+    .extra-info {
+      margin-left: 25px;
+    }
+    .same-class {
+      margin-top: 20px;
+    }
+    .notes {
+      margin-left: 25px;
+      margin-top: 15px;
+    }
+  </style>
+  {% include "navbar.html" %} {% block content %}
+  <h2 class="title">{{drug}}</h2>
+  <div class="row mt-5 mb-4">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Beers Criteria</h3>
+          <p class="card-text">
+            {% autoescape false %} {{beers}} {% endautoescape %}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">STOPP/START criteria</h3>
+          <p class="card-text">
+            {% autoescape false %} {{stopp_start}} {% endautoescape %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="extra-info">
+    {% if category == "Drug Class" %}
+    <h5>Medications under this drug class:</h5>
+    {% for med in list_of_meds %}
+    <a href="/medications/{{med.name}}">{{med.name}}</a><br />
+    {% endfor %} {% else %}
+    <h5>Drug class:</h5>
+    <a href="/drugclass/{{drugclass_name}}">{{drugclass_name}}</a><br />
+    {% if list_of_meds != 0 %}
+    <div class="same-class">
+      <h5>Medications in same drug class:</h5>
+      {% for med in list_of_meds %} {% if med.name != drug %}
+      <a href="/medications/{{med.name}}">{{med.name}}</a><br />
+      {% endif %} {% endfor %} {% endif %}
+    </div>
+    {% endif %}
+  </div>
+  <div class="notes">
+    <a class="btn btn-primary" href="submit_notes" role="button"
+      >Submit Note</a
+    >
+    <a class="btn btn-success" href="notes" role="button">View Note</a>
+  </div>
+  {% endblock %}
+</html>

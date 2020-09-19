@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Bootstrap core CSS -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
+  />
+  <style>
+    .list {
+      margin-top: 100px;
+      margin-left: 50px;
+    }
+  </style>
+  {% include "navbar.html" %} {% block content %}
+  <div class="list">
+    <h2>List of all {{title}} in database with recommendation:</h2>
+    {% for med in names %} {% if title == "Drug Classes" %}
+    <a href="/drugclass/{{med.name}}">{{med.name}}</a><br />
+    {% else %}
+    <a href="/medications/{{med.name}}">{{med.name}}</a><br />
+    {% endif %} {% endfor %} {% endblock %}
+  </div>
+</html>

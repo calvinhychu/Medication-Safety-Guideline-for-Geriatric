@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Bootstrap core CSS -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
+  />
+  <style>
+    .Error_page {
+      margin-top: 180px;
+      text-align: center;
+      font-size: 150%;
+    }
+  </style>
+  {% include "navbar.html" %} {% block content %}
+  <div class="Error_page">
+    <h1>Page Error.</h1>
+    <p>Go back to <a href="/">homepage</a></p>
+  </div>
+  {% endblock %}
+</html>

@@ -1,9 +1,84 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+<html lang="en">
+  <!-- Bootstrap core CSS -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
+  />
+  <style>
+    .about {
+      margin-top: 120px;
+      margin-left: 100px;
+      margin-right: 100px;
+      font-size: 16px;
+    }
+  </style>
+  {% include "navbar.html" %} {% block content %}
+  <div class="about">
+    <h4>
+      The goal of Database for Medication Safety in Geriatric Patients (DMSG) is
+      to:
+    </h4>
+    <ul>
+      <li>
+        Gives access to both BEERS criteria and STOPP/START criteria
+        recommendation for drug classes and medications.
+      </li>
+      <li>
+        Allows healthcare professional from the same healthcare institute to
+        share notes with each other regarding each drug or drugclass
+        recommendation to enhace patient care.
+      </li>
+    </ul>
+    <h4>Guidelines:</h4>
+    <p>
+      BEERS criteria and STOPP/START criteria are two most prominent guidelines
+      for healthcare professionals to help improve the safety of prescribing
+      medications for older adults. BEERS criteria is a guideline published by
+      American Geriatric Society in 2015 to identify potentially inappropriate
+      medication use in geriatric population. You can click
+      <a
+        href="https://www.guidelinecentral.com/summaries/american-geriatrics-society-2015-updated-beers-criteria-for-potentially-inappropriate-medication-use-in-older-adults/#section-society"
+        >here</a
+      >
+      to view the full publication of BEERS criteria. STOPP (Screening Tool of
+      Older Persons’ Prescriptions) and START (Screening Tool to Alert to Right
+      Treatment) are explicit criteria that facilitate medication review in
+      multi-morbid older people in most clinical settings. You can click
+      <a
+        href="https://www.tandfonline.com/doi/abs/10.1080/17512433.2020.1697676?journalCode=ierj20"
+        >here</a
+      >
+      to view full publication of STOPP/START.<br /><br />
+    </p>
+    <h4>Disclaimer:</h4>
+    <p>
+      DMSG is designed and created by Calvin Chu in Aug, 2020. It is developed
+      in cooperation with Anticoagulation clinic and Geriatric clinic at St
+      Joseph Healthcare Center, Toronto, Ontario. However, it is not affiliated
+      with St Joseph Healthcare Center, BEERS criteria and STOPP/START criteria.
+      This website only intended to be used for non-profit purpose. All
+      guidelines are properties of BEERS criteria or STOPP/START criteria.<br /><br />
+    </p>
 
-</body>
+    <h4>Open Source:</h4>
+    <p>
+      At DMSG, we hope other healthcare institutes or healthcare professionals
+      would be able to use this site for benefit of their patients. Therefore,
+      we made the code for the framework of this site available on GitHub and
+      welcome anyone to modify and use it in their own practice. We also invite
+      all of you with any ideas or suggestions to improve this website to visit
+      our Github repository and join our community.<br />
+    </p>
+
+    <a
+      href="https://github.com/calvinhychu/Database-for-Medication-Safety-in-Geriatric"
+      class="btn btn-dark"
+    >
+      GitHub
+    </a>
+  </div>
+  {% endblock %}
 </html>

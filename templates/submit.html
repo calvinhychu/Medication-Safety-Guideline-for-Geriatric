@@ -1,0 +1,35 @@
+{% extends "bootstrap/base.html" %} {% import "bootstrap/wtf.html" as wtf %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous"
+  />
+  <style>
+    .msg {
+      text-align: center;
+      color: red;
+    }
+  </style>
+  {% block content %}
+
+  <form method="POST" action="/{{medclass}}/{{med}}/submit_notes">
+    <h2 class="form-signin-heading">Note Submission</h2>
+    {{ form.hidden_tag() }} {{ wtf.form_field(form.content) }}
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      Submit
+    </button>
+  </form>
+  {% with messages = get_flashed_messages() %} {% if messages %} {% for msg in
+  messages %}
+  <h4 class="msg">{{msg}}</h4>
+  {% endfor %} {% endif %} {% endwith %}
+  <a href="/{{medclass}}/{{med}}/" class="btn btn-dark">
+    Back to medicine page 
+  </a>
+  {% endblock %}
+</html>
