@@ -1,4 +1,4 @@
-from models import *
+# from main import db
 from medication import *
 def create_tables():
     db.create_all()
