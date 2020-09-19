@@ -13,12 +13,14 @@ import datetime
 import os
 
 
+
+
 app = Flask(__name__)
 app.config.from_pyfile('config.cfg')
 
 Bootstrap(app)
 mail = Mail(app)
-s = URLSafeTimedSerializer(SECRET_KEY)
+s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
 db = SQLAlchemy(app)
 
 login_manager = LoginManager()
