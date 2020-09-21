@@ -9,17 +9,21 @@
 DMSG is web application that allows user to access safety infromation of medications for older adults from both BEERS criteira and STOPP/START Toolkit. It is intended to be use within a healthcare institution where healthcare professionals can sign-in to the application and share notes with each other regarding any medication, drug class and recommendation in the database. This repository provides the framework of the application (along with the database).
 
 ## Demo 
-In the following demo, you will see an user accessing the guideline in database, posting a note under one of the medication and viewing other notes that were posted.
 
+Click [here](https://database-for-medication-safety.herokuapp.com/) to view the web application in the browser. Please note this particular website is only used as an demo and it is not the intended platform for healthcare professionals to share notes in. If you want to use the application for your own healthcare institution, please read Getting Started.
+
+In this GIF, you will see an user accessing the guideline in database, posting a note under one of the medication and viewing other notes that were posted.
 <img src="./misc/demo.gif"/>
+
+In this GIF, you will see the complete sign-up procedure for this application.
+<img src="./misc/demo2.gif"/>
 
 ## Usage
 
-1. Click [here](https://your-twitch-clips.herokuapp.com/) to view it in the browser.
-2. To view guidelines from BEERS and STOPP/START, simply click on any medication/drug classes under "Medications" or "Drug Classes" in navigation bar.
-3. To view and post notes, you have to register and sign-in to an account. 
-4. Click on "Submit Note" or "View Note" button under each medication/drug class to submit or read note.
-5. Each user is only allowed to post 1 note per medication/drug class, posting another note will override old note.
+1. To view guidelines from BEERS and STOPP/START, simply click on any medication/drug classes under "Medications" or "Drug Classes" in navigation bar.
+2. To view and post notes, you have to register and sign-in to an account. 
+3. Click on "Submit Note" or "View Note" button under each medication/drug class to submit or read note.
+4. Each user is only allowed to post 1 note per medication/drug class, posting another note will override old note.
 
 ## Getting Started
 This repository siply provides the framework of the web application and some code will need to be changed to accomadate each healthcare institution. 
@@ -28,20 +32,23 @@ This repository siply provides the framework of the web application and some cod
 
 ```bash
   cd ~/projects
-  git clone https://github.com/calvinhychu/YourTwitchClips.git
+  git clone https://github.com/calvinhychu/Database-for-Medication-Safety-in-Geriatric.git
   cd YourTwitchClips
 ```
-### Code that needs modificaiton
-1. Change config.cfg for secret key, postgreSQL location and email server
-2. Change check_email_domain under forms.py to restrain email accounts from one certain domain to be able to register for an account 
 
+### Code that needs modificaiton
+1. Change config.cfg for secret key, postgreSQL location, email server, email account and other relevant email information
+2. Change check_email_domain under forms.py to restrain email accounts from one certain domain to be able to register for an account (optional)
+
+### To run it locally 
+1. Install python modules under requirements.txt
+2. Run create_table() in commands.py to create tables and insert guidelines to database
+3. Run main.py
 
 ## How it works?
-YourTwitchClips utilizes Twitch API to get access of Twitch user's follow list and list of top clips from each followed channel. 
+DBSG uses Flask for it's web framework and SQLAlchemy to manage an PostgreSQL database.
 
-YourTwitchClips uses axios to make HTTP call from client-side to server-side, server-side then make HTTP call to Twitch API and return it back to client-side.
-
-Server-side takes advantage of Express.js module for routing and API call. 
+Other python modules like flask_login, flask-wtf and itsdangerous are also used to develop account registration system
 
 ## Guidelines
 BEERS criteria and STOPP/START criteria are two most prominent guidelines for healthcare professionals to help improve the safety of prescribing medications for older adults. BEERS criteria is a guideline published by American Geriatric Society in 2015 to identify potentially inappropriate medication use in geriatric population. You can click [here](https://www.guidelinecentral.com/summaries/american-geriatrics-society-2015-updated-beers-criteria-for-potentially-inappropriate-medication-use-in-older-adults/#section-society
