@@ -3,3 +3,5 @@
 __pycache__
 stjoegeriatric.db
 secret_key.py
+DSMG.db
+testing_config.cfg
