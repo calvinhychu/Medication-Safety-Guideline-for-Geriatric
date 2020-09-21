@@ -1,16 +1,11 @@
-<html>
-<h1>Introduction</h1>
-<body>A search-engine based database comprised of safety infromation of medications for older adults from Beers List and STOPP/START Toolkit. Provides concise guidelines for healthcare professionals to help improve the safety of prescribing medications for geriatric population. Designed and developed in cooperation with geriatric clinic at St. Joseph's Health Centre in Toronto, Ontario. </body>
-</html>
-
-
 # Database for Medication Safety in Geriatric (DMSG)
 
 DMSG is web application that allows user to access safety infromation of medications for older adults from both BEERS criteira and STOPP/START Toolkit. It is intended to be use within a healthcare institution where healthcare professionals can sign-in to the application and share notes with each other regarding any medication, drug class and recommendation in the database. This repository provides the framework of the application (along with the database).
 
 ## Demo 
 
-Click [here](https://database-for-medication-safety.herokuapp.com/) to view the web application in the browser. Please note this particular website is only used as an demo and it is not the intended platform for healthcare professionals to share notes in. If you want to use the application for your own healthcare institution, please read Getting Started.
+<b>Click [here](https://database-for-medication-safety.herokuapp.com/) to view the web application in the browser.</b> 
+Please note this particular website is only used as an demo and it is not the intended platform for healthcare professionals to share notes in. If you want to use the application for your own healthcare institution, please read Getting Started.
 
 In this GIF, you will see an user accessing the guideline in database, posting a note under one of the medication and viewing other notes that were posted.
 <img src="./misc/demo.gif"/>
