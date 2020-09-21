@@ -1,6 +1,3 @@
-# new = DrugClass(name=name, )
-
-
 first_generation_antihistamine = ["<br /><b>Avoid</b><br />"\
                   "<br />Highly anticholinergic; clearance reduced with advanced age,and tolerance develops when used as "\
                   "hypnotic; risk of confusion, dry mouth, constipation, "\
@@ -14,11 +11,6 @@ first_generation_antihistamine = ["<br /><b>Avoid</b><br />"\
 antiparkinsonian_agents = ["<br /><b>Avoid</b><br />"\
 "<br />Not recommended for prevention of extrapyramidal symptoms with antipsychotics; more-effective agents available for treatment of Parkinson disease."\
 "<br /><br /><QE = Moderate; SR = Strong", "</br>No recommendation", 2]                  
-
-
-
-
-
 
 antispasmodics = ["<br /><b>Avoid</b><br />"\
 "<br />Highly anticholinergic, uncertain effectiveness."\
@@ -64,7 +56,7 @@ dig = ["<br /><b>Avoid as first-line therapy for atrial fibrillation. Avoid"\
 "(risk of toxicity if digoxin plasma levels not measured as eGFR may not be an "\
 "accurate indicator of clearance).<br /><br />"\
 "Anticholinergic Drug Burden (ACB) score: 1", 6]
-####
+
 ami = ["<br /><b>Avoid amiodarone as first-line therapy for atrial fibrillation unless "\
 "the patient has heart failure or substantial left ventricular hypertrophy</b><br /><br />"\
 "Amiodarone is effective for maintaining sinus rhythm but has greater toxicities "\
@@ -123,8 +115,6 @@ antipsychotics = ["<br /><b>Avoid for both typical and atypical antipsychotics "
 
 barbiturates = ["<br /><b>Avoid</b><br /><br />High rate of physical dependence, tolerance to sleep benefits, "\
 "greater risk of overdose at low dosages<br /><br />QE = High; SR = Strong", "<br />No recommendation", 10]
-
-
 
 benzos = ["<br /><b>Avoid</b><br /><br />Older adults have increased sensitivity to benzodiazepines "\
 "and decreased metabolism of long-acting agents; in general, all benzodiazepines "\
@@ -358,7 +348,6 @@ antibiotics = ["<br />See medication list", "<br />See medication list", 35]
 
 ccb = ["<br />See medication list", "<br />See medication list", 36]
 
-
 tranquilizers = ["<br /><b>Avoid</b><br /><br />High rate of physical dependence; very sedating<br /><br />QE = Moderate; SR = Strong",
                      "<br />No recommendation", 37]
 
@@ -380,13 +369,6 @@ biguanides = ["<br />See Metformin", "<br />See Metformin", 43]
 RANK_ligand_inhibitors = ["<br />See denosumab", "<br />See denosumab", 44]
 
 anti_gout_agents = ["<br />See medication list", "<br />See medication list", 45]
-
-
-   
-    
-    
-    
-  
 
 
 drug_classes = {'H1 antihistamine': first_generation_antihistamine,
