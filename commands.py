@@ -1,4 +1,5 @@
-# from main import db
+from models import User, Note, Drugclass, Drug
+from extensions import db
 from medication import *
 def create_tables():
     db.create_all()
