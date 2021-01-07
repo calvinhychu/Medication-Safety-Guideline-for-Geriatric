@@ -1,13 +1,13 @@
 # Database for Medication Safety in Geriatric (DMSG)
 
-DMSG is web application that allows user to access safety infromation of medications for older adults from both BEERS criteira and STOPP/START Toolkit. It is intended to be use within a healthcare institution where healthcare professionals can sign-in to the application and share notes with each other regarding any medication, drug class and recommendation in the database. This repository provides the framework of the application (along with the database).
+DMSG is web application that allows users to access safety information of medications for older adults from both BEERS criteria and STOPP/START Toolkit. It is intended to be use within a healthcare institution where healthcare professionals can sign-in to the application and share notes with each other regarding any medication, drug class and recommendation in the database. This repository provides the framework of the application (along with the database).
 
 ## Demo 
 
 <b>Click [here](https://database-for-medication-safety.herokuapp.com/) to view the web application in the browser.</b> 
-Please note this particular website is only used as an demo and it is not the intended platform for healthcare professionals to share notes in. If you want to use the application for your own healthcare institution, please read Getting Started.
+Please note this particular website is only used as a demo and it is not the intended platform for healthcare professionals to share notes in. If you want to use the application for your own healthcare institution, please read Getting Started.
 
-In this GIF, you will see an user accessing the guideline in database, posting a note under one of the medication and viewing other notes that were posted.
+In this GIF, you will see a user accessing the guideline in database, posting a note under one of the medication and viewing other notes that were posted.
 <img src="./misc/demo.gif"/>
 
 In this GIF, you will see the complete sign-up procedure for this application.
@@ -21,7 +21,7 @@ In this GIF, you will see the complete sign-up procedure for this application.
 4. Each user is only allowed to post 1 note per medication/drug class, posting another note will override old note.
 
 ## Getting Started
-This repository siply provides the framework of the web application and some code will need to be changed to accomadate each healthcare institution. 
+This repository simply provides the framework of the web application and some code will need to be changed to accommodate each healthcare institution. 
 
 ### Clone this project
 
@@ -31,7 +31,7 @@ This repository siply provides the framework of the web application and some cod
   cd YourTwitchClips
 ```
 
-### Code that needs modificaiton
+### Code that needs modification
 1. Change config.cfg for secret key, postgreSQL location, email server, email account and other relevant email information
 2. Change check_email_domain under forms.py to restrain email accounts from one certain domain to be able to register for an account (optional)
 
