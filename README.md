@@ -26,9 +26,7 @@ This repository simply provides the framework of the web application and some co
 ### Clone this project
 
 ```bash
-  cd ~/projects
   git clone https://github.com/calvinhychu/Database-for-Medication-Safety-in-Geriatric.git
-  cd YourTwitchClips
 ```
 
 ### Code that needs modification
